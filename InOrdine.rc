@@ -1,0 +1,31 @@
+LANGUAGE 0, 0
+1 ICON "InOrdine.ico"
+1 24 "InOrdine.manifest"
+
+LANGUAGE 16, 1
+1 VERSIONINFO
+ FILEVERSION 1,2,0,0
+ PRODUCTVERSION 1,2,0,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0
+ FILEOS 0x40004L
+ FILETYPE 1
+ FILESUBTYPE 0
+BEGIN
+ BLOCK "StringFileInfo"
+ BEGIN
+  BLOCK "041004B0"
+  BEGIN
+   VALUE "FileDescription", "InOrdine - Riordino animato dei file\0"
+   VALUE "FileVersion", "1.2.0\0"
+   VALUE "InternalName", "InOrdine\0"
+   VALUE "OriginalFilename", "InOrdine.exe\0"
+   VALUE "ProductName", "InOrdine\0"
+   VALUE "ProductVersion", "1.2.0\0"
+  END
+ END
+ BLOCK "VarFileInfo"
+ BEGIN
+  VALUE "Translation", 0x0410, 1200
+ END
+END

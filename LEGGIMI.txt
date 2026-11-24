@@ -1,0 +1,73 @@
+InOrdine 1.2.0
+
+Avvia InOrdine.exe con un doppio clic. La finestra mostra l’anteprima della
+cartella che contiene l’eseguibile. Con “Scegli cartella” o trascinando una
+cartella nella finestra puoi selezionare una posizione diversa. “Dettagli”
+mostra l’elenco completo. “Riordina i file” avvia gli spostamenti.
+“Prova la demo” avvia una simulazione che utilizza dieci file di esempio.
+
+L’ingranaggio in alto a destra apre Impostazioni.
+• Preferenze permette di scegliere italiano, inglese, spagnolo o francese.
+  Il primo avvio usa l’italiano. Puoi cambiare lingua tra due operazioni.
+• In Colori dell’app puoi scegliere Salvia, Oceano, Viola o Ambra, oppure
+  “Scegli un colore…” per impostare un colore personalizzato. L’anteprima e
+  la finestra principale si aggiornano subito.
+• In Storico trovi i riordini reali avviati dalla versione 1.2, dal più recente.
+  Seleziona una riga per vedere i file, la cartella prevista, il nome finale
+  effettivo e l’esito. Il nome finale compare per i file che sono stati spostati.
+  “Aggiorna” rilegge lo storico anche se hai usato una seconda finestra di InOrdine.
+  Le anteprime e le demo sono escluse dallo storico.
+• Un’operazione interrotta conserva i risultati già registrati. Se il programma
+  si chiude all’improvviso tra lo spostamento e la conferma su disco, la voce
+  “Da verificare” permette di individuare il file interessato. Se Windows
+  impedisce il salvataggio, il riepilogo segnala uno storico incompleto.
+
+Lo storico è locale al profilo Windows, in %LOCALAPPDATA%\InOrdine\history.sqlite3.
+Registra i nomi, le cartelle e i risultati delle operazioni. Le preferenze sono
+memorizzate in HKEY_CURRENT_USER\Software\InOrdine.
+
+Nella barra laterale “Animazione” permette di scegliere l’effetto anche durante
+la demo o il riordino. La scelta viene ricordata per l’utente Windows attuale.
+
+• Esplosione è la scelta iniziale. Le icone escono dalla cartella centrale,
+  ruotano e si spargono nel riquadro. Il programma le raccoglie una alla volta
+  e le deposita nella cartella prevista.
+• Orbita dispone i file lungo traiettorie ellittiche. Ogni icona si stacca
+  dalla propria orbita per raggiungere la destinazione.
+• Classica ripropone la vista della prima versione, con file a sinistra e
+  cartelle a destra.
+
+“Velocità animazione” offre Fluida, Rapida e Istantanea. Con molti file la
+scena mostra un gruppo alla volta. Ogni spostamento riuscito viene rappresentato
+alle velocità Fluida e Rapida. I duplicati saltati e gli errori sono indicati
+nei dettagli. Gli effetti si svolgono nel riquadro dell’app. Nella demo tutti
+i file sono simulati.
+
+Sono disponibili tre metodi di riordino.
+• Per estensione usa l’ultima estensione. Un archivio .tar.gz va in gz.
+• Per categoria raggruppa documenti, immagini, video, audio, archivi,
+  applicazioni e codice. Le estensioni non riconosciute vanno in Altro.
+  Una nuova categoria prende il nome nella lingua selezionata. Una cartella
+  già presente con il nome equivalente in un’altra lingua viene riutilizzata.
+  Se esistono più nomi equivalenti, ha priorità quello nella lingua corrente.
+• Per mese di modifica crea cartelle nel formato AAAA-MM, secondo l’ora locale.
+
+L’app lavora sui file con estensione nel primo livello della cartella scelta.
+Esclude le sottocartelle, i file nascosti o di sistema, i nomi che iniziano con
+un punto, i punti di reparse, l’eseguibile in uso, ordine.bat, desktop.ini e
+thumbs.db. Riutilizza le cartelle esistenti. Per i duplicati puoi lasciare il
+file in origine oppure spostarlo aggiungendo (2), (3) o il primo numero libero
+al nome. “Interrompi” ferma il lavoro dopo il file in corso. Trovi l’esito di
+ogni operazione in “Dettagli”.
+
+Sorgenti
+
+Il codice C dell’app è in src. Per utilizzare il programma basta l’eseguibile.
+
+Su Windows con MinGW-w64 x64, esegui Compila.cmd dalla cartella dei sorgenti.
+Il comando usa gcc e windres presenti nel PATH e scrive build\InOrdine.exe.
+
+Per riprodurre la build fornita su Linux x86-64 servono Python 3 con Pillow,
+GCC, GNU binutils con supporto i386pep e la libreria condivisa LLVM 19.
+Esegui python3 build.py dalla cartella dei sorgenti. Il risultato è
+build/InOrdine.exe. Le risorse grafiche sono generate da resources.py.
